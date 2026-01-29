@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Frontend en Kubernetes</h1>
+  <button onclick="loadData()">Llamar API</button>
+  <p id="result"></p>
+
+  <script>
+    function loadData() {
+      fetch('/api')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('result').innerText = data.message;
+        });
+    }
+  </script>
+</body>
+</html>
